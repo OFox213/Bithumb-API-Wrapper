@@ -125,7 +125,7 @@ namespace BithumbTrader
         /// <para>빗썸에서 거래 가능한 마켓과 가상자산 정보를 제공합니다.</para>
         /// </summary>
         ///<returns>JObject</returns>
-        public async Task<JToken> GetMarketAll(string markets, bool isDetails)
+        public async Task<JToken> GetMarketAll(bool isDetails)
         {
             var response = await GetResponse(Method.Get, "/v1/market/all" + (isDetails ? "?isDetails=true" : ""));
             return ParseResponse(response);
@@ -244,3 +244,4 @@ namespace BithumbTrader
         #endregion
     }
 }
+
